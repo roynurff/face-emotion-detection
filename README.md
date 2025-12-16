@@ -34,7 +34,7 @@ Project ini membutuhkan versi library yang spesifik agar model dapat berjalan la
 
 ### 1. Clone Repository
 
-```bash
+
 git clone [https://github.com/roynurff/face-emotion-detection.git](https://github.com/roynurff/face-emotion-detection.git)
 cd face-emotion-detection
 2. Setup Backend
@@ -114,4 +114,3 @@ face-emotion-detection/
 
 🤝 Kontribusi
 Silakan fork repository ini, lakukan perubahan, dan kirim Pull Request.
-```
