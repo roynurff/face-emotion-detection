@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Emotion Detection - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen"
+  >
+    <!-- NAVBAR -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-3">
+          <span class="text-4xl">🤖</span>
+          <h1
+            class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          >
+            LER-AI
+          </h1>
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="upload.html"
+            class="px-4 py-2 text-gray-700 hover:text-blue-600 transition font-medium"
+            >Upload</a
+          >
+          <a
+            href="webcam.html"
+            class="px-4 py-2 text-gray-700 hover:text-blue-600 transition font-medium"
+            >Webcam</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="text-center mb-16 animate-fade-in">
+        <h2
+          class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+        >
+          Deteksi Emosi Wajah Real-Time
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Teknologi AI canggih menggunakan
+          <span class="font-semibold text-blue-600">OpenCV</span>,
+          <span class="font-semibold text-purple-600">MTCNN</span>,
+          <span class="font-semibold text-pink-600">OpenFace Embedding</span>,
+          dan
+          <span class="font-semibold text-indigo-600"
+            >Keras Layer Classification</span
+          >
+          untuk mengenali emosi dari wajah Anda
+        </p>
+      </div>
+
+      <!-- FEATURE CARDS -->
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <!-- UPLOAD CARD -->
+        <a href="upload.html" class="group">
+          <div
+            class="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-blue-400"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform"
+              >
+                📷
+              </div>
+              <svg
+                class="w-8 h-8 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-2 transition-all"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-800">Upload Gambar</h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Unggah foto wajah Anda dan dapatkan analisis emosi instan dengan
+              akurasi tinggi menggunakan deep learning model
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                >Fast</span
+              >
+              <span
+                class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                >Accurate</span
+              >
+              <span
+                class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
+                >Easy</span
+              >
+            </div>
+          </div>
+        </a>
+
+        <!-- WEBCAM CARD -->
+        <a href="webcam.html" class="group">
+          <div
+            class="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-purple-400"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="bg-gradient-to-br from-purple-500 to-pink-600 w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform"
+              >
+                🎥
+              </div>
+              <svg
+                class="w-8 h-8 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-2 transition-all"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 text-gray-800">
+              Realtime Webcam
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-4">
+              Deteksi emosi secara langsung dari webcam dengan pembaruan
+              real-time dan visualisasi bounding box interaktif
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                >Live</span
+              >
+              <span
+                class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm font-medium"
+                >Interactive</span
+              >
+              <span
+                class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium"
+                >Real-time</span
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- TECH STACK -->
+      <div class="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8">
+        <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">
+          ⚡ Teknologi yang Digunakan
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center group hover:scale-110 transition-transform">
+            <div
+              class="bg-gradient-to-br from-orange-400 to-red-500 w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg mb-3"
+            >
+              CV
+            </div>
+            <p class="font-semibold text-gray-700">OpenCV</p>
+            <p class="text-sm text-gray-500">Image Processing</p>
+          </div>
+
+          <div class="text-center group hover:scale-110 transition-transform">
+            <div
+              class="bg-gradient-to-br from-blue-500 to-indigo-600 w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg mb-3"
+            >
+              MT
+            </div>
+            <p class="font-semibold text-gray-700">MTCNN</p>
+            <p class="text-sm text-gray-500">Face Detection</p>
+          </div>
+
+          <div class="text-center group hover:scale-110 transition-transform">
+            <div
+              class="bg-gradient-to-br from-purple-500 to-pink-600 w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg mb-3"
+            >
+              OF
+            </div>
+            <p class="font-semibold text-gray-700">OpenFace</p>
+            <p class="text-sm text-gray-500">Face Embedding</p>
+          </div>
+
+          <div class="text-center group hover:scale-110 transition-transform">
+            <div
+              class="bg-gradient-to-br from-green-500 to-teal-600 w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg mb-3"
+            >
+              NN
+            </div>
+            <p class="font-semibold text-gray-700">Keras</p>
+            <p class="text-sm text-gray-500">Classification</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMOTIONS -->
+      <div class="mt-16 text-center">
+        <h3 class="text-2xl font-bold mb-6 text-gray-800">
+          🎭 Emosi yang Dapat Dideteksi
+        </h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span
+            class="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full font-semibold shadow-lg hover:scale-110 transition-transform"
+            >😊 Happy</span
+          >
+          <span
+            class="px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-full font-semibold shadow-lg hover:scale-110 transition-transform"
+            >😢 Sad</span
+          >
+          <span
+            class="px-6 py-3 bg-gradient-to-r from-red-400 to-red-600 text-white rounded-full font-semibold shadow-lg hover:scale-110 transition-transform"
+            >😠 Angry</span
+          >
+          <span
+            class="px-6 py-3 bg-gradient-to-r from-purple-400 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:scale-110 transition-transform"
+            >😮 Surprise</span
+          >
+          <span
+            class="px-6 py-3 bg-gradient-to-r from-green-400 to-teal-600 text-white rounded-full font-semibold shadow-lg hover:scale-110 transition-transform"
+            >😐 Neutral</span
+          >
+          <span
+            class="px-6 py-3 bg-gradient-to-r from-pink-400 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:scale-110 transition-transform"
+            >😨 Fear</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white/80 backdrop-blur-md border-t border-gray-200 mt-20">
+      <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+        <p class="text-gray-600">
+          LER-AI • Manajemen Data dan Informasi Project
+        </p>
+        <p class="text-sm text-gray-500 mt-2">
+          Built with OpenCV, MTCNN, OpenFace & Keras Layer Classification
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

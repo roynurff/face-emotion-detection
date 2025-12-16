@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime Webcam - Face Emotion Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #canvas {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 min-h-screen"
+  >
+    <!-- NAVBAR -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-3 hover:opacity-80 transition"
+        >
+          <span class="text-4xl">🤖</span>
+          <h1
+            class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+          >
+            LER-AI
+          </h1>
+        </a>
+        <div class="flex gap-4">
+          <a
+            href="index.html"
+            class="px-4 py-2 text-gray-700 hover:text-purple-600 transition font-medium"
+            >Home</a
+          >
+          <a
+            href="upload.html"
+            class="px-4 py-2 text-gray-700 hover:text-purple-600 transition font-medium"
+            >Upload</a
+          >
+          <a
+            href="webcam.html"
+            class="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium"
+            >Webcam</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+      <!-- HEADER -->
+      <div class="text-center mb-12">
+        <div
+          class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full text-5xl mb-4 shadow-lg"
+        >
+          🎥
+        </div>
+        <h2
+          class="text-4xl font-extrabold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+        >
+          Realtime Emotion Detection
+        </h2>
+        <p class="text-gray-600 text-lg">
+          Deteksi emosi wajah secara langsung dari webcam Anda
+        </p>
+      </div>
+
+      <!-- WEBCAM CONTAINER -->
+      <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+        <!-- VIDEO DISPLAY -->
+        <div class="w-full flex justify-center mb-6">
+          <video id="video" autoplay muted playsinline class="hidden"></video>
+          <div class="relative w-full max-w-2xl px-4">
+            <canvas
+              id="canvas"
+              class="w-full aspect-video border-4 border-purple-300 rounded-2xl shadow-xl"
+            ></canvas>
+            <div
+              id="recordingIndicator"
+              class="hidden absolute top-4 left-4 flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg"
+            >
+              <div class="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+              RECORDING
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="flex justify-center gap-4 mb-6">
+          <button
+            id="startBtn"
+            class="px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white text-lg font-bold rounded-xl hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2"
+          >
+            <span class="text-2xl">▶</span>
+            Start Detection
+          </button>
+
+          <button
+            id="stopBtn"
+            class="px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white text-lg font-bold rounded-xl hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2"
+            disabled
+          >
+            <span class="text-2xl">⏹</span>
+            Stop
+          </button>
+        </div>
+
+        <!-- STATUS & STATS -->
+        <div class="grid md:grid-cols-2 gap-4">
+          <div
+            class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-6 text-center"
+          >
+            <p class="text-gray-600 font-semibold mb-2">Faces Detected</p>
+            <p id="facesCount" class="text-2xl font-bold text-blue-700">0</p>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-green-100 to-teal-100 rounded-xl p-6 text-center"
+          >
+            <p class="text-gray-600 font-semibold mb-2">Processing Speed</p>
+            <p id="latencyText" class="text-2xl font-bold text-green-700">
+              - ms
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETECTED EMOTIONS PANEL -->
+      <div
+        id="emotionsPanel"
+        class="hidden bg-white rounded-2xl shadow-2xl p-8"
+      >
+        <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">
+          🎭 Detected Emotions
+        </h3>
+        <div id="emotionsList" class="grid md:grid-cols-2 gap-4">
+          <!-- Emotions will be populated here dynamically -->
+        </div>
+      </div>
+
+      <!-- INSTRUCTIONS -->
+      <div
+        class="mt-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-8"
+      >
+        <h3
+          class="text-xl font-bold mb-4 text-gray-800 flex items-center gap-2"
+        >
+          <span class="text-2xl">💡</span>
+          Tips untuk Hasil Terbaik:
+        </h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold">✓</span>
+            <span>Pastikan pencahayaan ruangan cukup terang</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold">✓</span>
+            <span>Posisikan wajah menghadap kamera secara langsung</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold">✓</span>
+            <span>Jaga jarak optimal sekitar 50-100 cm dari kamera</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-purple-600 font-bold">✓</span>
+            <span>Hindari ekspresi yang terlalu cepat berubah</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white/80 backdrop-blur-md border-t border-gray-200 mt-20">
+      <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+        <p class="text-gray-600">
+          LER-AI • Manajemen Data dan Informasi Project
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/webcam.js"></script>
+  </body>
+</html>
