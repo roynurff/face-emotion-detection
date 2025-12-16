@@ -65,47 +65,41 @@ Agar project **tidak error**, gunakan versi berikut:
 
 ---
 
-## 📥 Cara Install & Menjalankan
+# 📥 Cara Install & Menjalankan
 
-### 1️⃣ Clone Repository
-bash
-git clone https://github.com/roynurff/face-emotion-detection.git
-cd face-emotion-detection
+## 1️⃣ Clone Repository/download zip
+- bash
+- git clone https://github.com/roynurff/face-emotion-detection.git
+- cd face-emotion-detection
 
-### 2️⃣ SETUP BACKEND
-Opsi A: Anaconda/Miniconda (download)
-conda create -n cv python=3.10
-conda activate cv
+## 2️⃣ SETUP BACKEND
+### Opsi A: Anaconda/Miniconda (download)
+- conda create -n cv python=3.10
+- conda activate cv
+- cd backend
+- pip install -r requirements.txt
 
-cd backend
-pip install -r requirements.txt
-
-Opsi B: Venv
-cd backend
-python -m venv venv
-
-# Windows
+### Opsi B: Venv
+- cd backend
+- python -m venv venv
+#### - Windows
 venv\Scripts\activate
-
-# Mac / Linux
+#### - Mac / Linux
 source venv/bin/activate
-
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### 3️⃣ MENJALANKAN BACKEND (FAST API)
 - uvicorn main:app --reload
-jika sukses akan
-
+- jika sukses akan
 - Uvicorn running on http://127.0.0.1:8000
 
 ### 4️⃣ Menjalankan Frontend
-
 - Buka folder frontend/
 - Buka index.html
 - Disarankan: gunakan Live Server (VS Code)
-  Kenapa Live Server?
-  Browser tidak memblokir webcam
-  Menghindari error getUserMedia
+- Kenapa Live Server?
+- Browser tidak memblokir webcam
+- Menghindari error getUserMedia
 
 Langkah:
 - Install ekstensi Live Server
