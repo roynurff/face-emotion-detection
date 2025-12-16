@@ -1,4 +1,4 @@
-# 🎭 Realtime Face Emotion Detection (LERA AI)
+# 🎭 Realtime Face Emotion Detection (LER-AI)
 
 Aplikasi **deteksi emosi wajah berbasis web** yang mendukung **Real-time Webcam** dan **Upload Foto**.  
 Project ini dibangun menggunakan **FastAPI** sebagai backend, **TensorFlow/Keras** untuk deep learning, serta **MTCNN** dan **DeepFace** untuk deteksi dan ekstraksi fitur wajah.
@@ -82,10 +82,8 @@ Agar project **tidak error**, gunakan versi berikut:
 ### Opsi B: Venv
 - cd backend
 - python -m venv venv
-#### - Windows
-venv\Scripts\activate
-#### - Mac / Linux
-source venv/bin/activate
+- venv\Scripts\activate (Windows)
+- source venv/bin/activate (Mac / Linux)
 - pip install -r requirements.txt
 
 ### 3️⃣ MENJALANKAN BACKEND (FAST API)
