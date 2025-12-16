@@ -3,7 +3,6 @@
 Aplikasi **deteksi emosi wajah berbasis web** yang mendukung **Real-time Webcam** dan **Upload Foto**.  
 Project ini dibangun menggunakan **FastAPI** sebagai backend, **TensorFlow/Keras** untuk deep learning, serta **MTCNN** dan **DeepFace** untuk deteksi dan ekstraksi fitur wajah.
 
-> LERA = **Let’s Emotion pRediction with AI**
 
 <img width="1897" height="908" alt="image" src="https://github.com/user-attachments/assets/44a2f363-5808-4965-863e-5d18f6fb654f" />
 
@@ -73,7 +72,7 @@ bash
 git clone https://github.com/roynurff/face-emotion-detection.git
 cd face-emotion-detection
 
-## SETUP BACKEND
+### 2️⃣ SETUP BACKEND
 Opsi A: Anaconda/Miniconda (download)
 conda create -n cv python=3.10
 conda activate cv
@@ -93,13 +92,13 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-## MENJALANKAN BACKEND (FAST API)
+### 3️⃣ MENJALANKAN BACKEND (FAST API)
 - uvicorn main:app --reload
 jika sukses akan
 
 - Uvicorn running on http://127.0.0.1:8000
 
-## Menjalankan Frontend
+### 4️⃣ Menjalankan Frontend
 
 - Buka folder frontend/
 - Buka index.html
